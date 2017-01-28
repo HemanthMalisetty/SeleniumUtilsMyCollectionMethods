@@ -10,9 +10,11 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.interactions.*;
+import org.openqa.selenium.interactions.internal.Coordinates;
+import org.openqa.selenium.internal.Locatable;
 
 public class Utils {
 		public static WebDriver driver = null;
@@ -32,6 +34,19 @@ public class Utils {
 			Log.error("Class Utils | Method OpenBrowser | Exception desc : "+e.getMessage());
 		}
 		return driver;
+	}
+	
+	public static void myAction(){
+		Mouse mouse;
+		Locatable locationProvider = new Locatable() {
+			
+			@Override
+			public Coordinates getCoordinates() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+		};
+		ClickAndHoldAction action = new ClickAndHoldAction(mouse, locationProvider);
 	}
 	
 	public static String getTestCaseName(String sTestCase)throws Exception{
