@@ -51,7 +51,9 @@ public class NavigationMenuDrowpDownTestMoveToWorksWithChromeOnlyInSelenium3poin
 		//action.moveToElement(businessMenuItem);
 		//action.build().perform();
 		
-		takeScreenshotMethod("C:\\developer");
+		//I had to manually first create the file so 
+		//it can edit it, this is not the proper way to do it
+		takeScreenshotMethod("screenshots\\1.png");
 		
 	}
 	
